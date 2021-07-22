@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+		<!--* Projectiles -->
+	<!--! Kinetic Shot (Railgun) -->
+	<ThingDef ParentName="BaseBullet">
+		<!--? Info -->
+		<defName>XIMD_P_kinetic_shot</defName>
+		<label>kinetic projectile</label>
+		
+		<!--? Graphics & Effects -->
+		<graphicData>
+			<texPath>XIMD/Things/Projectiles/P_railgun</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>1.25</drawSize>
+		</graphicData>
+		
+		<!--? Stats -->
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>27</damageAmountBase>
+			<stoppingPower>1.5</stoppingPower>
+			<speed>150</speed>
+		</projectile>
+	</ThingDef>
+
+	<!--! Charged Kinetic Shot (Charged Railgun) -->
+	<ThingDef ParentName="BaseBullet">
+		<!--? Info -->
+		<defName>XIMD_P_charged_kinetic_shot</defName>
+		<label>charged kinetic projectile</label>
+		
+		<!--? Graphics & Effects -->
+		<graphicData>
+			<texPath>XIMD/Things/Projectiles/P_charged_railgun</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>1.5</drawSize>
+		</graphicData>
+		
+		<!--? Stats -->
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>45</damageAmountBase>
+			<stoppingPower>3</stoppingPower>
+			<speed>200</speed>
+		</projectile>
+	</ThingDef>
+
+	<!--! Small Charged Kinetic Shot (Handheld Railgun) -->
+	<ThingDef ParentName="BaseBullet">
+		<!--? Info -->
+		<defName>XIMD_P_small_charged_kinetic_shot</defName>
+		<label>small charged projectile</label>
+		
+		<!--? Graphics & Effects -->
+		<graphicData>
+			<texPath>XIMD/Things/Projectiles/P_charged_railgun</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>0.7</drawSize>
+		</graphicData>
+		
+		<!--? Stats -->
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>18</damageAmountBase>
+			<stoppingPower>1.2</stoppingPower>
+			<speed>180</speed>
+		</projectile>
+	</ThingDef>
+
+
+
+		<!--* Weapons -->
+	<!--! Railgun -->	
+	<ThingDef ParentName="BaseHumanMakeableGun">
+		<!--? Info -->
+		<defName>XIMD_WR_railgun</defName>
+		<label>railgun</label>
+		<description>A magnetically actuated long range weapon capable of accelerating projectiles to near the speed of sound.\n\nWhile its quite slow-firing, it makes up for it with its impressive range, great accuracy and damage.</description>
+
+		<weaponTags>
+			<li>SpacerGun</li>
+			<li>Railgun</li>
+		</weaponTags>
+		
+		<!--? Graphics & Effects -->
+		<graphicData>
+			<texPath>XIMD/Things/Weapons/WR_railgun</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.1</drawSize>
+		</graphicData>
+		<uiIconScale>1.1</uiIconScale>
+		<equippedAngleOffset>45</equippedAngleOffset>
+		<soundInteract>Interact_ChargeLance</soundInteract>
+
+		<!--? Weapon Stats -->
+		<statBases>
+			<Mass>3.5</Mass>
+
+			<AccuracyTouch>0.55</AccuracyTouch>
+			<AccuracyShort>0.68</AccuracyShort>
+			<AccuracyMedium>0.80</AccuracyMedium>
+			<AccuracyLong>0.88</AccuracyLong>
+
+			<RangedWeapon_Cooldown>2.5</RangedWeapon_Cooldown>
+
+			<!--? Work to Make  -->
+            <WorkToMake>48000</WorkToMake>
+		</statBases>
+
+		<!--? Recipe & Requisites -->
+		<recipeMaker>
+			<!--* Work to make -->
+        	<workSkill>Crafting</workSkill>
+			<skillRequirements>
+				<Crafting>7</Crafting>
+			</skillRequirements>
+			
+			<!--* Requisites -->
+			<researchPrerequisite>XIMD_R_magnetic_propulsion</researchPrerequisite>
+			<recipeUsers Inherit="False">
+				<li>TableMachining</li>
+				<li>FabricationBench</li>
+			</recipeUsers>
+		</recipeMaker>
+		<costList>
+			<XI_titanium>40</XI_titanium>
+			<XI_super_cap>8</XI_super_cap>
+			<ComponentIndustrial>4</ComponentIndustrial>
+		</costList>
+		<techLevel>Spacer</techLevel>
+
+		<!--? Shooting -->
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+
+				<!--* Uptime -->
+				<warmupTime>4.5</warmupTime>
+
+				<!--* Projectiles -->
+				<defaultProjectile>XIMD_P_kinetic_shot</defaultProjectile>
+				<range>52</range>
+
+				<!--* Sounds & Effects -->
+				<soundCast>ChargeLance_Fire</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>14</muzzleFlashScale>
+			</li>
+		</verbs>
+
+		<!--? Melee damage types -->
+		<tools>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>8</power>
+				<cooldownTime>1.6</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>12</power>
+				<cooldownTime>1.6</cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+
+	<!--! Charged Railgun -->
+	<ThingDef ParentName="BaseHumanMakeableGun">
+		<!--? Info -->
+		<defName>XIMD_WR_charged_railgun</defName>
+		<label>charged railgun</label>
+		<description>A magnetically actuated long range weapon capable of accelerating charged projectiles to supersonic speeds.\n\nWhile its slow-firing, it makes up for it with its incredible range, amazing accuracy and deadly damage. Additionally, this weapon shoots two projectiles in quick succesion.</description>
+
+		<weaponTags>
+			<li>SpacerGun</li>
+			<li>Railgun</li>
+		</weaponTags>
+		
+		<!--? Graphics & Effects -->
+		<graphicData>
+			<texPath>XIMD/Things/Weapons/WR_charged_railgun</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.3</drawSize>
+		</graphicData>
+		<equippedAngleOffset>44</equippedAngleOffset>
+		<soundInteract>Interact_ChargeLance</soundInteract>
+
+		<!--? Weapon Stats -->
+		<statBases>
+			<Mass>4</Mass>
+
+			<AccuracyTouch>0.70</AccuracyTouch>
+			<AccuracyShort>0.80</AccuracyShort>
+			<AccuracyMedium>0.90</AccuracyMedium>
+			<AccuracyLong>0.95</AccuracyLong>
+
+			<RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+
+			<!--* Work to Make  -->
+            <WorkToMake>72000</WorkToMake>
+		</statBases>
+
+		<!--? Recipe & Requisites -->
+		<recipeMaker>
+			<!--* Work to make -->
+        	<workSkill>Crafting</workSkill>
+			<skillRequirements>
+				<Crafting>8</Crafting>
+			</skillRequirements>
+			
+			<!--* Requisites -->
+			<researchPrerequisite>XIMD_R_rail_supercharging</researchPrerequisite>
+			<recipeUsers Inherit="False">
+				<li>FabricationBench</li>
+			</recipeUsers>
+		</recipeMaker>
+		<costList>
+			<Plasteel>20</Plasteel>
+			<XIMD_xenine>40</XIMD_xenine>
+			<XIMD_power_cell>12</XIMD_power_cell>
+			<ComponentSpacer>2</ComponentSpacer>
+		</costList>
+		<techLevel>Spacer</techLevel>
+
+		<!--? Shooting -->
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+
+				<!--* Uptime -->
+				<warmupTime>5</warmupTime>
+
+				<!--* Projectiles -->
+				<defaultProjectile>XIMD_P_charged_kinetic_shot</defaultProjectile>
+				<ticksBetweenBurstShots>45</ticksBetweenBurstShots>
+				<burstShotCount>2</burstShotCount>
+				<range>60</range>
+
+				<!--* Sounds & Effects -->
+				<soundCast>ChargeLance_Fire</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>20</muzzleFlashScale>
+			</li>
+		</verbs>
+
+		<!--? Melee damage types -->
+		<tools>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>16</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+
+
+	<!--! Handheld Railgun -->
+	<ThingDef ParentName="BaseHumanMakeableGun">
+		<!--? Info -->
+		<defName>XIMD_WR_handheld_railgun</defName>
+		<label>handheld railgun</label>
+		<description>A magnetically actuated medium range handheld railgun.\n\nWhile smaller and lighter than its bigger brother, the charged railgun, this weapon can still pump tons of damage from a relativelly safe distance.</description>
+
+		<weaponTags>
+			<li>SpacerGun</li>
+			<li>Railgun</li>
+		</weaponTags>
+		
+		<!--? Graphics & Effects -->
+		<graphicData>
+			<texPath>XIMD/Things/Weapons/WR_handheld_railgun</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.9</drawSize>
+		</graphicData>
+		<uiIconScale>1.2</uiIconScale>
+		<soundInteract>Interact_Revolver</soundInteract>
+
+		<!--? Weapon Stats -->
+		<!-- <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags> -->
+		<statBases>
+			<Mass>2</Mass>
+
+			<AccuracyTouch>0.80</AccuracyTouch>
+			<AccuracyShort>0.75</AccuracyShort>
+			<AccuracyMedium>0.70</AccuracyMedium>
+			<AccuracyLong>0.60</AccuracyLong>
+
+			<RangedWeapon_Cooldown>1.4</RangedWeapon_Cooldown>
+
+			<!--* Work to Make  -->
+            <WorkToMake>42000</WorkToMake>
+		</statBases>
+
+		<!--? Recipe & Requisites -->
+		<recipeMaker>
+			<!--* Work to make -->
+        	<workSkill>Crafting</workSkill>
+			<skillRequirements>
+				<Crafting>8</Crafting>
+			</skillRequirements>
+			
+			<!--* Requisites -->
+			<researchPrerequisite>XIMD_R_rail_supercharging</researchPrerequisite>
+			<recipeUsers Inherit="False">
+				<li>FabricationBench</li>
+			</recipeUsers>
+		</recipeMaker>
+		<costList>
+			<Plasteel>5</Plasteel>
+			<XIMD_xenine>15</XIMD_xenine>
+			<XIMD_power_cell>4</XIMD_power_cell>
+			<ComponentSpacer>1</ComponentSpacer>
+		</costList>
+		<techLevel>Spacer</techLevel>
+
+		<!--? Shooting -->
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+
+				<!--* Uptime -->
+				<warmupTime>0.5</warmupTime>
+
+				<!--* Projectiles -->
+				<defaultProjectile>XIMD_P_small_charged_kinetic_shot</defaultProjectile>
+				<range>28</range>
+
+				<!--* Sounds & Effects -->
+				<soundCast>Shot_ChargeRifle</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>20</muzzleFlashScale>
+			</li>
+		</verbs>
+
+		<!--? Melee damage types -->
+		<tools>
+			<li>
+				<label>grip</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>8</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>12</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+
+</Defs>

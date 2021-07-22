@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!--! Xen Rock -->
+	<ThingDef ParentName="ResourceBase">
+		<!--? Info -->
+		<defName>XIMD_xen_rock</defName>
+		<label>xen rock</label>
+		<description>A durable blue crystal. Although useless by itself, it has great potential as a material thanks to its special properties.</description>
+
+		<thingCategories>
+			<li>ResourcesRaw</li>
+		</thingCategories>
+
+		<!--? Graphics & Effects -->
+		<graphicData>
+			<texPath>XIMD/Things/Items/xen_rock</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+
+		<soundInteract>ChunkRock_Drop</soundInteract>
+		<soundDrop>ChunkRock_Drop</soundDrop>
+	
+		<!--? Stats -->
+		<statBases>
+			<Mass>0.4</Mass>
+			<MarketValue>8</MarketValue>
+
+			<SharpDamageMultiplier>0.7</SharpDamageMultiplier>
+			<BluntDamageMultiplier>1.0</BluntDamageMultiplier>
+		</statBases>
+
+		<useHitPoints>false</useHitPoints>
+		<healthAffectsPrice>false</healthAffectsPrice>
+
+		<burnableByRecipe>false</burnableByRecipe>
+		<smeltable>true</smeltable>
+
+		<!--? Deep Mining -->
+		<deepCommonality>1</deepCommonality>
+		<deepLumpSizeRange>7~14</deepLumpSizeRange>
+		<deepCountPerPortion>12</deepCountPerPortion>
+	</ThingDef>
+
+</Defs>

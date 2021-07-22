@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+        <!--* Tier 4 -->
+    <!--! Xenine -->
+    <ResearchProjectDef>
+		<!--? Info -->
+		<defName>XIMD_R_xenine</defName>
+		<label>xenine</label>
+		<description>Produce xenine, a really durable high-tech alloy with the special propereties of Xen.</description>
+		
+		<!--? Difficulty -->
+		<techLevel>Ultra</techLevel>
+		<baseCost>2000</baseCost>
+		
+		<!--? Requisites -->
+		<prerequisites>
+			<li>XI_R_plasteel</li>
+		</prerequisites>
+		<hiddenPrerequisites>
+            <li>XIMD_R_advanced_mechanites</li>
+        </hiddenPrerequisites>
+		
+		<!--? Required research equipment -->
+		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+        <requiredResearchFacilities>
+			<li>MultiAnalyzer</li>
+		</requiredResearchFacilities>
+		
+		<!--? Positioning -->
+		<researchViewX>3</researchViewX>
+		<researchViewY>0.5</researchViewY>
+		<tab>XI_XdustryTab</tab>
+	</ResearchProjectDef> 
+
+</Defs>

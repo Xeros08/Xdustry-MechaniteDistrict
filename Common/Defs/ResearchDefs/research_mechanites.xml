@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+		<!--* Tier 1 -->
+	<!--! Mechanites -->
+	<ResearchProjectDef>
+		<!--? Info -->
+		<defName>XIMD_R_mechanites</defName>
+		<label>mechanite assembly</label>
+		<description>Tiny machines capable of doing specialized tasks at a microscopic scale.</description>
+
+		<!--? Difficulty -->
+		<techLevel>Spacer</techLevel>
+		<baseCost>1000</baseCost>
+
+		<!--? Requisites -->
+		<prerequisites>
+			<li>Fabrication</li>
+		</prerequisites>
+		<hiddenPrerequisites>
+			<li>XI_R_titanium</li>
+		</hiddenPrerequisites>
+
+		<!--? Required research equipment -->
+		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+		<requiredResearchFacilities>
+			<li>MultiAnalyzer</li>
+		</requiredResearchFacilities>
+
+		<!--? Positioning -->
+		<researchViewX>0</researchViewX>
+		<researchViewY>5.5</researchViewY>
+		<tab>XI_XdustryTab</tab>
+	</ResearchProjectDef>
+
+
+		<!--* Tier 4 -->
+	<!--! Advanced Mechanites -->
+	<ResearchProjectDef>
+		<!--? Info -->
+		<defName>XIMD_R_advanced_mechanites</defName>
+		<label>advanced mechanites</label>
+		<description>Smaller and more precise mechanites capable of more complex tasks.</description>
+
+		<!--? Difficulty -->
+		<techLevel>Ultra</techLevel>
+		<baseCost>2000</baseCost>
+
+		<!--? Requisites -->
+		<prerequisites>
+			<li>AdvancedFabrication</li>
+			<li>XIMD_R_mechanites</li>
+		</prerequisites>
+		<hiddenPrerequisites>
+			<li>XI_R_plasteel</li>
+		</hiddenPrerequisites>
+
+		<!--? Required research equipment -->
+		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+		<requiredResearchFacilities>
+			<li>MultiAnalyzer</li>
+		</requiredResearchFacilities>
+
+		<!--? Positioning -->
+		<researchViewX>3</researchViewX>
+		<researchViewY>5.5</researchViewY>
+		<tab>XI_XdustryTab</tab>
+	</ResearchProjectDef>
+
+</Defs>

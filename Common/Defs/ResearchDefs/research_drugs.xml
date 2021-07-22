@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+		<!--* Tier 2 -->
+	<!--! Luciferium -->
+	<ResearchProjectDef>
+		<!--? Info -->
+		<defName>XIMD_R_luciferium</defName>
+		<label>luciferium</label>
+		<description>Produce luciferium, a risky mechanite concoction that dramatically improves the body's functioning. Regular doses are needed to keep cohesion between the mechanites.\nThe loss of cohesion can end up in several detrimental side effects and even death if left untreated.</description>
+
+		<!--? Difficulty -->
+		<techLevel>Ultra</techLevel>
+		<baseCost>1500</baseCost>
+
+		<!--? Requisites -->
+		<prerequisites>
+			<li>XIMD_R_mechanites</li>
+		</prerequisites>
+		<hiddenPrerequisites>
+			<li>XI_R_neutroamine</li>
+		</hiddenPrerequisites>
+
+		<!--? Required research equipment -->
+		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+		<requiredResearchFacilities>
+			<li>MultiAnalyzer</li>
+		</requiredResearchFacilities>
+
+		<!--? Positioning -->
+		<researchViewX>1</researchViewX>
+		<researchViewY>5</researchViewY>
+		<tab>XI_XdustryTab</tab>
+	</ResearchProjectDef>
+
+
+		<!--* Tier 3 -->
+	<!--! Mechanite Cohesion  -->
+	<ResearchProjectDef>
+		<!--? Info -->
+		<defName>XIMD_R_mechanite_cohesion</defName>
+		<label>mechanite cohesion</label>
+		<description>The loss of cohesion in mechanite based medicine is the primary cause for undesirable side effects.\n\nBy letting a subpersona take control, these side effects can be mitigated or even nullified.\nFurther research will be needed to apply this knowledge.</description>
+
+		<!--? Difficulty -->
+		<techLevel>Ultra</techLevel>
+		<baseCost>2500</baseCost>
+
+		<!--? Requisites -->
+		<prerequisites>
+			<li>XI_R_subpersonas</li>
+			<li>XIMD_R_luciferium</li>
+		</prerequisites>
+		<!-- <hiddenPrerequisites></hiddenPrerequisites> -->
+
+		<!--? Required research equipment -->
+		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+        <requiredResearchFacilities>
+			<li>MultiAnalyzer</li>
+		</requiredResearchFacilities>
+
+		<!--? Positioning -->
+		<researchViewX>2</researchViewX>
+		<researchViewY>5</researchViewY>
+		<tab>XI_XdustryTab</tab>
+	</ResearchProjectDef>
+
+		<!--* Tier 4 -->
+	<!--! Luciferium Cure -->
+	<ResearchProjectDef>
+		<!--? Info -->
+		<defName>XIMD_R_angelium</defName>
+		<label>angelium</label>
+		<description>Produce angelium, a mechanite concoction designed to neutralize luciferium mechanites.</description>
+
+		<!--? Difficulty -->
+		<techLevel>Ultra</techLevel>
+		<baseCost>3000</baseCost>
+
+		<!--? Requisites -->
+		<prerequisites>
+			<li>XIMD_R_mechanite_cohesion</li>
+		</prerequisites>
+		<!-- <hiddenPrerequisites></hiddenPrerequisites> -->
+
+		<!--? Required research equipment -->
+		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+		<requiredResearchFacilities>
+			<li>MultiAnalyzer</li>
+		</requiredResearchFacilities>
+
+		<!--? Positioning -->
+		<researchViewX>3</researchViewX>
+		<researchViewY>5</researchViewY>
+		<tab>XI_XdustryTab</tab>
+	</ResearchProjectDef>
+
+
+		<!--* Tier 5 -->
+	<!--! Limb regrowth & Healing of open wounds -->
+	<ResearchProjectDef>
+		<!--? Info -->
+		<defName>XIMD_R_hydras_blood</defName>
+		<label>hydra's blood</label>
+		<description>Produce hydra's blood, a concoction of advanced mechanites that allows for limb regrowth.</description>
+
+		<!--? Difficulty -->
+		<techLevel>Ultra</techLevel>
+		<baseCost>6000</baseCost>
+
+		<!--? Requisites -->
+		<prerequisites>
+			<li>XIMD_R_angelium</li>
+			<li>XIMD_R_advanced_mechanites</li>
+		</prerequisites>
+		
+		<!--? Required research equipment -->
+		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+		<requiredResearchFacilities>
+			<li>MultiAnalyzer</li>
+		</requiredResearchFacilities>
+
+		<!--? Positioning -->
+		<researchViewX>4</researchViewX>
+		<researchViewY>4.5</researchViewY>
+		<tab>XI_XdustryTab</tab>
+	</ResearchProjectDef>
+
+	<!--! Life saving pill & Inmuno booster  -->
+	<ResearchProjectDef>
+		<!--? Info -->
+		<defName>XIMD_R_alicorn</defName>
+		<label>alicorn(TODO)</label> <!-- TODO: Alicorn -->
+		<description>TODO</description>
+
+		<!--? Difficulty -->
+		<techLevel>Ultra</techLevel>
+		<baseCost>2500</baseCost>
+
+		<!--? Requisites -->
+		<prerequisites>
+			<li>XIMD_R_angelium</li>
+			<li>XIMD_R_advanced_mechanites</li>
+		</prerequisites>
+
+		<!--? Required research equipment -->
+		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+        <requiredResearchFacilities>
+			<li>MultiAnalyzer</li>
+		</requiredResearchFacilities>
+
+		<!--? Positioning -->
+		<researchViewX>4</researchViewX>
+		<researchViewY>5</researchViewY>
+		<tab>XI_XdustryTab</tab>
+	</ResearchProjectDef>
+
+</Defs>

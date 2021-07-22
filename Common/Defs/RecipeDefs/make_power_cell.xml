@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--! Make Power Cell -->
+	<RecipeDef>
+		<!--? Info -->
+		<defName>XIMD_MK_power_cell</defName>
+		<label>make power cell</label>
+		<description>Make a batch of power cells.</description>
+		<jobString>Making Power cell.</jobString>
+
+		<!--? Effects -->
+		<effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Machining</soundWorking>
+
+		<!--? Requisites -->
+		<researchPrerequisite>XIMD_R_power_cell</researchPrerequisite>
+		<skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
+
+		<!--? Work to make -->
+		<unfinishedThingDef>XI_unfinished_generic</unfinishedThingDef>
+		<workAmount>4800</workAmount> <!-- divide by ~57 -->
+    	<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+        <workSkill>Crafting</workSkill>
+
+		<!--? Ingredients -->
+		<ingredients>
+			<li>
+				<filter><thingDefs>
+					<li>Plasteel</li>
+				</thingDefs></filter>
+				<count>14</count>
+			</li>
+			<li>
+				<filter><thingDefs>
+					<li>XI_super_cap</li>
+				</thingDefs></filter>
+				<count>2</count>
+			</li>
+            <li>
+				<filter><thingDefs>
+					<li>ComponentSpacer</li>
+				</thingDefs></filter>
+				<count>2</count>
+			</li>
+		</ingredients>
+
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Plasteel</li>
+				<li>XI_super_cap</li>
+                <li>ComponentSpacer</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+
+		<!--? Product -->
+		<products>
+			<XIMD_power_cell>6</XIMD_power_cell>
+		</products>
+	</RecipeDef>
+
+</Defs>

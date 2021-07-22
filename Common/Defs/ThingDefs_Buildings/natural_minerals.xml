@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!--! Xen ore vein -->
+	<ThingDef ParentName="RockBase">
+		<!--? Info -->
+		<defName>XIMD_mineable_xen</defName>
+		<label>xen ore</label>
+		<description>A vein of Xen, a durable blue crystal with special properties.</description>
+
+		<!--? Graphics & Effects -->
+		<graphicData>
+			<texPath>Things/Building/Linked/RockFlecked_Atlas</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<color>(76,68,67)</color>
+			<colorTwo>(13,145,100)</colorTwo>
+		</graphicData>
+
+		<!--? Stats -->
+		<statBases>
+			<MaxHitPoints>3000</MaxHitPoints>
+		</statBases>
+
+		<!--? Resource Alvaliability -->
+		<building>
+			<mineableYield>12</mineableYield>
+			<mineableThing>XIMD_xen_rock</mineableThing>
+
+			<isResourceRock>true</isResourceRock>
+			<mineableScatterCommonality>0.15</mineableScatterCommonality>
+			<mineableScatterLumpSizeRange>7~14</mineableScatterLumpSizeRange>
+		</building>
+	</ThingDef>
+
+</Defs>

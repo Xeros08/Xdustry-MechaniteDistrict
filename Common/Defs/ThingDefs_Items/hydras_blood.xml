@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--! Hydra's Blood (Item) -->
+    <ThingDef ParentName="DrugPillBase">
+        <!--? Info -->
+        <defName>XIMD_hydras_blood</defName>
+		<label>hydra's blood</label>
+        <description>A concoction of advanced mechanites that improve the body's functioning and will slowly regrow lost limbs.\nThis process can be extremely painful, as the active mechanites constantly stimulate the nerves that once led to the now unexisting limbs.\n\nThe mechanites slowly degrade from constantly repairing and aiding in the body's functioning, but wont loose all cohesion. A dose of hydra's blood will last between 54 and 60 days.</description>
+
+        <techLevel>Ultra</techLevel>
+
+		<tradeTags>
+            <li>ExoticMisc</li>
+        </tradeTags>
+
+        <descriptionHyperlinks>
+			<HediffDef>XIMD_H_hydras_blood</HediffDef>
+			<HediffDef>XIMD_H_regrowing_bodypart</HediffDef>
+		</descriptionHyperlinks>
+
+        <!--? Graphics & Effects -->
+        <graphicData>
+			<texPath>XIMD/Things/Items/hydras_blood</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<uiIconScale>1.2</uiIconScale>
+
+        <!--? Stats -->
+		<stackLimit>25</stackLimit>
+        <statBases>
+			<MarketValue>2500</MarketValue>
+			<Mass>0.05</Mass>
+
+			<!--* Work to make -->
+            <WorkToMake>11000</WorkToMake>
+		</statBases>
+
+		<!--? Recipe & Requisites -->
+		<recipeMaker>
+			<!--* Work to make -->
+			<unfinishedThingDef>XI_unfinished_drug</unfinishedThingDef>
+			<workSkill>Intellectual</workSkill>
+			<workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+			<bulkRecipeCount>4</bulkRecipeCount>
+			
+			<!--* Sounds & Effects -->
+			<effectWorking>Cook</effectWorking>
+			<soundWorking>Recipe_Drug</soundWorking>
+			
+			<!--* Requisites -->
+			<researchPrerequisite>XIMD_R_hydras_blood</researchPrerequisite>
+			<recipeUsers>
+				<li>DrugLab</li>
+			</recipeUsers>
+		</recipeMaker>
+		<costList>
+			<XI_subpersona_core>1</XI_subpersona_core>
+			<XIMD_advanced_mechanites>12</XIMD_advanced_mechanites>
+			<Neutroamine>8</Neutroamine>
+		</costList>
+
+        <!--? COMPS -->
+        <comps>
+			<li Class="CompProperties_Drug">
+				<listOrder>1020</listOrder>
+			</li>
+		</comps>
+
+        <!--? Ingestion effects -->
+        <ingestible>
+			<drugCategory>Medical</drugCategory>
+			<joy>0.0</joy>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>XIMD_H_hydras_blood</hediffDef>
+					<severity>1.00</severity>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+    </ThingDef>
+
+
+    <!--! Hydra´s Blood (HediffDef) -->
+    <HediffDef>
+		<!--? Info -->
+		<defName>XIMD_H_hydras_blood</defName>
+		<label>hydra's blood</label>
+		<defaultLabelColor>(181,12,57)</defaultLabelColor>
+		
+		<description>Active hydra's blood mechanites in the body. They improve the body's functioning and slowly and painfully regrow lost limbs.\n\nIts still not perfect as it can take some time before it realizes a limb has been lost. All bleeding should be stopped before its too late.</description>
+		
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<isBad>false</isBad>
+
+		<!--? Hediff class and components -->
+		<hediffClass>Xdustry.MechaniteDistict.Hediff_HydrasBlood</hediffClass>
+		<comps>
+        	<!--* Xdustry.MechaniteDistict.HediffCompProperties_RegrowMissingParts -->
+			<li Class="Xdustry.MechaniteDistict.HediffCompProperties_RegrowMissingParts">
+				<!-- 2500~5000 for testing -->
+				<!-- 30000~40000 -->
+				<regrowCooldown>30000~40000</regrowCooldown>
+				<regrowthManagerDef>XIMD_H_regrowing_bodypart</regrowthManagerDef>
+
+				<painOffset>0.055</painOffset>
+				<painOffsetIfOrgan>0.7</painOffsetIfOrgan>
+				<regrowOrgans>false</regrowOrgans>
+
+				<organList>
+					<li>Brain</li>
+					<li>Eye</li>
+					<li>Heart</li>
+					<li>Lung</li>
+					<li>Kidney</li>
+					<li>Liver</li>
+				</organList>
+				<!-- LimbList is unused -->
+				<!-- <limbList>
+					<li>Ear</li>
+					<li>Nose</li>
+					<li>Jaw</li>
+
+					<li>Shoulder</li>
+					<li>Clavicle</li>
+					<li>Arm</li>
+					<li>Humerus</li>
+					<li>Radius</li>
+					<li>Hand</li>
+					<li>Finger</li>
+
+					<li>Leg</li>
+					<li>Femur</li>
+					<li>Tibia</li>
+					<li>Foot</li>
+					<li>Toe</li>
+				</limbList> -->
+			</li>
+			<li Class="HediffCompProperties_DisappearsOnDeath" />
+			<li Class="HediffCompProperties_Disappears">
+				<!-- From 54 to 60 days -->
+    			<disappearsAfterTicks>3360000~3600000</disappearsAfterTicks>
+                <!-- https://www.rimworldwiki.com/wiki/Time -->
+  			</li>
+  			<li Class="HediffCompProperties_SeverityPerDay">
+   				<severityPerDay>-0.016</severityPerDay>
+ 			</li>
+		</comps>
+
+		<!--? Severity and Stages -->
+		<maxSeverity>1.0</maxSeverity>
+		<stages>
+			<li>
+				<label>wearing out</label>
+				<painOffset>0.2</painOffset>
+				<capMods>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>-0.1</offset>
+					</li>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<offset>-0.1</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>0.2</minSeverity>
+				<capMods>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.5</offset>
+					</li>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<offset>0.5</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>fresh</label>
+				<minSeverity>0.93</minSeverity>
+				<capMods>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.5</offset>
+					</li>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<offset>0.75</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<!--! Growing BodyPart (HediffDef) -->
+	<HediffDef>
+		<!--? Info -->
+		<defName>XIMD_H_regrowing_bodypart</defName>
+		<label>regrowing</label>
+		<defaultLabelColor>(172,234,0)</defaultLabelColor>
+		
+		<description>A limb that was once lost. Slowly regrowing.</description>
+		
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<isBad>false</isBad>
+
+		<!--? Hediff class and components -->
+        <!--* Xdustry.MechaniteDistict.Hediff_RegowingBodyPart -->
+		<hediffClass>Xdustry.MechaniteDistict.Hediff_RegowingBodyPart</hediffClass>
+		<comps>
+			<li Class="Xdustry.MechaniteDistict.HediffCompProperties_RegrowthManager">
+				<activatorHediffDef>XIMD_H_hydras_blood</activatorHediffDef>
+
+				<!-- https://www.rimworldwiki.com/wiki/Time -->
+				<!-- 75000 -->
+				<ticksToRegrow>75000</ticksToRegrow>
+				<showProgress>true</showProgress>
+			</li>
+		</comps>
+
+		<!--? Severity & Stages -->
+	</HediffDef>
+
+
+</Defs>

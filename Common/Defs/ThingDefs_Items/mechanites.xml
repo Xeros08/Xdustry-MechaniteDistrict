@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <!--! Mechanites -->
+    <ThingDef ParentName="ResourceBase">
+        <!--? Info -->
+		<defName>XIMD_mechanites</defName>
+		<label>mechanites</label>
+		<description>Tiny machines capable of doing specialized tasks at a microscopic scale.</description>
+
+		<techLevel>Spacer</techLevel>
+        <thingCategories>
+			<li>Manufactured</li>
+		</thingCategories>
+
+        <tradeability>Buyable</tradeability>
+        <tradeTags>
+            <li>ExoticMisc</li>
+        </tradeTags>
+
+        <!--? Graphics & Effects -->
+        <graphicData>
+			<texPath>XIMD/Things/Items/mechanites</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+
+        <soundInteract>Metal_Drop</soundInteract>
+        <soundDrop>Standard_Drop</soundDrop>
+		
+        <!--? Stats -->
+		<stackLimit>75</stackLimit>
+        <statBases>
+			<MarketValue>30</MarketValue>
+			<Mass>0.1</Mass>
+
+            <MaxHitPoints>80</MaxHitPoints>
+            <DeteriorationRate>1.5</DeteriorationRate>
+		</statBases>
+            <!--* Not a drop from salvaging -->
+        <intricate>true</intricate>
+	</ThingDef>
+
+
+    <!--! Advanced Mechanites -->
+    <ThingDef ParentName="ResourceBase">
+        <!--? Info -->
+		<defName>XIMD_advanced_mechanites</defName>
+		<label>advanced mechanites</label>
+		<description>Smaller and more precise mechanites capable of more complex tasks.</description>
+
+		<techLevel>Ultra</techLevel>
+        <thingCategories>
+			<li>Manufactured</li>
+		</thingCategories>
+
+        <tradeability>Buyable</tradeability>
+        <tradeTags>
+            <li>ExoticMisc</li>
+        </tradeTags>
+
+        <!--? Graphics & Effects -->
+        <graphicData>
+			<texPath>XIMD/Things/Items/advanced_mechanites</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+
+        <soundInteract>Metal_Drop</soundInteract>
+        <soundDrop>Standard_Drop</soundDrop>
+		
+        <!--? Stats -->
+		<stackLimit>75</stackLimit>
+        <statBases>
+			<MarketValue>80</MarketValue>
+			<Mass>0.1</Mass>
+
+            <MaxHitPoints>80</MaxHitPoints>
+            <DeteriorationRate>1.5</DeteriorationRate>
+		</statBases>
+            <!--* Not a drop from salvaging -->
+        <intricate>true</intricate>
+	</ThingDef>
+
+
+</Defs>

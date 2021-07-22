@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <!--! Power Cell -->
+    <ThingDef ParentName="ResourceBase">
+        <!--? Info -->
+		<defName>XIMD_power_cell</defName>
+		<label>power cell</label>
+		<description>A spacer component of great capacity, capable of extremely fast charge and discharge while still providing insane amounts of power.</description>
+
+		<techLevel>Spacer</techLevel>
+        <thingCategories>
+			<li>Manufactured</li>
+		</thingCategories>
+
+        <tradeTags>
+            <li>ExoticMisc</li>
+        </tradeTags>
+
+        <!--? Graphics & Effects -->
+        <graphicData>
+			<texPath>XIMD/Things/Items/power_cell</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+        <uiIconScale>1.1</uiIconScale>
+
+        <soundInteract>Metal_Drop</soundInteract>
+        <soundDrop>Standard_Drop</soundDrop>
+		
+        <!--? Stats -->
+		<stackLimit>25</stackLimit>
+        <statBases>
+			<MarketValue>42</MarketValue>
+			<Mass>0.8</Mass>
+
+            <MaxHitPoints>100</MaxHitPoints>
+            <DeteriorationRate>0.8</DeteriorationRate>
+		</statBases>
+            <!--* Not a drop from salvaging -->
+        <intricate>true</intricate>
+	</ThingDef>
+    
+</Defs>

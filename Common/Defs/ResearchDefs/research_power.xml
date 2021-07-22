@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+        <!--* Tier 3 -->
+	<!--! Power Cells -->
+	<ResearchProjectDef>
+		<!--? Info -->
+		<defName>XIMD_R_power_cell</defName>
+		<label>power cell</label>
+		<description>A hyper dense energy storage solution.</description>
+		
+		<!--? Difficulty -->
+		<techLevel>Spacer</techLevel>
+		<baseCost>1000</baseCost>
+		
+		<!--? Requisites -->
+		<prerequisites>
+			<li>Fabrication</li>
+			<li>XI_R_super_caps</li>
+		</prerequisites>
+		<hiddenPrerequisites>
+			<li>XI_R_plasteel</li>
+		</hiddenPrerequisites>
+		
+		<!--? Required research equipment -->
+		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+		<requiredResearchFacilities>
+			<li>MultiAnalyzer</li>
+		</requiredResearchFacilities>
+		
+		<!--? Positioning -->
+		<researchViewX>2</researchViewX>
+		<researchViewY>3</researchViewY>
+		<tab>XI_XdustryTab</tab>
+	</ResearchProjectDef>
+
+
+</Defs>

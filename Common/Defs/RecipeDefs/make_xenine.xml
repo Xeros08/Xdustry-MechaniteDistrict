@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--! Make Xenine -->
+	<RecipeDef>
+		<!--? Info -->
+		<defName>XIMD_MK_xenine</defName>
+		<label>smelt xenine</label>
+		<description>Make a batch of xenine loy by alloying some plasteel with some Xen with the help of mechanites.</description>
+		<jobString>Smelting Xenine.</jobString>
+
+		<!--? Effects -->
+		<effectWorking>Smelt</effectWorking>
+        <soundWorking>Recipe_Smelt</soundWorking>
+
+		<!--? Requisites -->
+		<researchPrerequisite>XIMD_R_xenine</researchPrerequisite>
+
+		<!--? Work to make -->
+		<workAmount>2800</workAmount> <!-- divide by ~57 -->
+    	<workSpeedStat>SmeltingSpeed</workSpeedStat>
+
+		<!--? Ingredients -->
+		<ingredients>
+            <li>
+				<filter><thingDefs>
+					<li>XIMD_xen_rock</li>
+				</thingDefs></filter>
+				<count>20</count>
+			</li>
+			<li>
+				<filter><thingDefs>
+					<li>Plasteel</li>
+				</thingDefs></filter>
+				<count>10</count>
+			</li>
+            <li>
+				<filter><thingDefs>
+					<li>XIMD_advanced_mechanites</li>
+				</thingDefs></filter>
+				<count>2</count>
+			</li>
+		</ingredients>
+
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>XIMD_xen_rock</li>
+				<li>Plasteel</li>
+                <li>XIMD_advanced_mechanites</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+
+		<!--? Product -->
+		<products>
+			<XIMD_xenine>25</XIMD_xenine>
+		</products>
+	</RecipeDef>
+
+</Defs>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+        <!--* Tier 3 -->
+    <!--! Gauss Rifle -->
+    <ResearchProjectDef>
+		<!--? Info -->
+		<defName>XIMD_R_magnetic_propulsion</defName>
+		<label>magnetic propulsion</label>
+		<description>Craft high-power guns that use magnetic fields to accelerate projectiles to incredible speeds.</description>
+
+		<!--? Difficulty -->
+		<techLevel>Spacer</techLevel>
+		<baseCost>2000</baseCost>
+
+		<!--? Requisites -->
+		<prerequisites>
+			<li>PrecisionRifling</li>
+            <li>XI_R_super_caps</li>
+        </prerequisites>
+		<hiddenPrerequisites>
+			<li>XI_R_plasteel</li>
+		</hiddenPrerequisites>
+
+		<!--? Required research equipment -->
+		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+		<requiredResearchFacilities>
+			<li>MultiAnalyzer</li>
+		</requiredResearchFacilities>
+
+		<!--? Positioning -->
+		<researchViewX>2</researchViewX>
+		<researchViewY>3.5</researchViewY>
+		<tab>XI_XdustryTab</tab>
+	</ResearchProjectDef>
+
+
+        <!--? Tier 4 -->
+    <!--! Charged Railgun -->
+    <ResearchProjectDef>
+		<!--? Info -->
+		<defName>XIMD_R_rail_supercharging</defName>
+		<label>rail supercharging</label>
+		<description>Use the special properties of xenine to reinforce the rails to withstand the wear and tear of charged projectiles.</description>
+
+		<!--? Difficulty -->
+		<techLevel>Ultra</techLevel>
+		<baseCost>2500</baseCost>
+
+		<!--? Requisites -->
+		<prerequisites>
+            <li>ChargedShot</li>
+            <li>XIMD_R_magnetic_propulsion</li>
+			<li>XIMD_R_power_cell</li>
+        </prerequisites>
+		<hiddenPrerequisites>
+            <li>XIMD_R_xenine</li>
+        </hiddenPrerequisites>
+
+		<!--? Required research equipment -->
+		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+		<requiredResearchFacilities>
+			<li>MultiAnalyzer</li>
+		</requiredResearchFacilities>
+
+		<!--? Positioning -->
+		<researchViewX>3</researchViewX>
+		<researchViewY>3.5</researchViewY>
+		<tab>XI_XdustryTab</tab>
+	</ResearchProjectDef>
+
+</Defs>
