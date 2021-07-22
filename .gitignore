@@ -1,0 +1,5 @@
+# Hot garbage
+.vs
+
+# C# intermediates
+**/Source/**/obj
