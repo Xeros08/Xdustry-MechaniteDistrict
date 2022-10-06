@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+    <!--! FabricationBench -->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName = "FabricationBench"]/recipes</xpath>
+        <value>
+            <li>XIMD_MK_mechanites</li>
+            <li>XIMD_MK_advanced_mechanites</li>
+            
+            <li>XIMD_MK_power_cell</li>
+	    </value>
+    </Operation>
+
+    <!--! TableMachining -->
+    <!-- <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName = "TableMachining"]/recipes</xpath>
+        <value>
+            
+	    </value>
+    </Operation> -->
+
+    <!--! ElectricSmelter -->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName = "ElectricSmelter"]/recipes</xpath>
+        <value>
+            <li>XIMD_MK_xenine</li>
+	    </value>
+    </Operation>
+
+    <!--! Luciferium (Recipe) -->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName = "Luciferium"]</xpath>
+        <value>
+            <!--? Recipe & Requisites -->
+            <recipeMaker>
+                <!--* Work to make -->
+	            <unfinishedThingDef>XI_unfinished_drug</unfinishedThingDef>
+                <workSkill>Intellectual</workSkill>
+                <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+                <bulkRecipeCount>4</bulkRecipeCount>
+                
+                <!--* Sounds & Effects -->
+                <effectWorking>Cook</effectWorking>
+                <soundWorking>Recipe_Drug</soundWorking>
+                
+                <!--* Requisites -->
+                <researchPrerequisite>XIMD_R_luciferium</researchPrerequisite>
+                <recipeUsers>
+                    <li>DrugLab</li>
+                </recipeUsers>
+            </recipeMaker>
+            <costList>
+                <XIMD_mechanites>12</XIMD_mechanites>
+                <Neutroamine>2</Neutroamine>
+            </costList>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName = "Luciferium"]/statBases</xpath>
+        <value>
+            <!--? Work to Make  -->
+            <WorkToMake>4500</WorkToMake>
+        </value>
+    </Operation>
+
+</Patch>

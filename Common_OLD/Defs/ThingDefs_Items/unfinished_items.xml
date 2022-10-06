@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<!--! Unfinished Mechanites -->
+	<ThingDef ParentName="UnfinishedBase">
+		<defName>XIMD_unfinished_mechanites</defName>
+		<label>unfinished mechanites</label>
+		<description>An unfinished batch of mechanites.</description>
+		<statBases>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<graphicData>
+			<texPath>Things/Item/Unfinished/UnfinishedComponent</texPath> <!-- TODO: texture -->
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<stuffCategories Inherit="false" />
+	</ThingDef>
+
+</Defs>

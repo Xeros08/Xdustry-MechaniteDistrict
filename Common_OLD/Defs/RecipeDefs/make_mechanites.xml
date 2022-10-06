@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--! Make Mechanites -->
+	<RecipeDef>
+		<!--? Info -->
+		<defName>XIMD_MK_mechanites</defName>
+		<label>make mechanites</label>
+		<description>Make a batch of mechanites.</description>
+		<jobString>Making Mechanites.</jobString>
+
+		<!--? Effects -->
+		<effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Machining</soundWorking>
+
+		<!--? Requisites -->
+		<researchPrerequisite>XIMD_R_mechanites</researchPrerequisite>
+		<skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
+
+		<!--? Work to make -->
+		<unfinishedThingDef>XIMD_unfinished_mechanites</unfinishedThingDef>
+		<workAmount>6000</workAmount> <!-- divide by ~57 -->
+    	<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+        <workSkill>Crafting</workSkill>
+
+		<!--? Ingredients -->
+		<ingredients>
+			<li>
+				<filter><thingDefs>
+					<li>XI_titanium</li>
+				</thingDefs></filter>
+				<count>12</count>
+			</li>
+            <li>
+				<filter><thingDefs>
+					<li>ComponentIndustrial</li>
+				</thingDefs></filter>
+				<count>2</count>
+			</li>
+		</ingredients>
+
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>XI_titanium</li>
+                <li>ComponentIndustrial</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+
+		<!--? Product -->
+		<products>
+			<XIMD_mechanites>8</XIMD_mechanites>
+		</products>
+	</RecipeDef>
+
+
+    <!--! Make Advanced Mechanites -->
+	<RecipeDef>
+		<!--? Info -->
+		<defName>XIMD_MK_advanced_mechanites</defName>
+		<label>make advanced mechanites</label>
+		<description>Make a batch of advanced mechanites.</description>
+		<jobString>Making Advanced mechanites.</jobString>
+
+		<!--? Effects -->
+		<effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Machining</soundWorking>
+
+		<!--? Requisites -->
+		<unfinishedThingDef>XIMD_unfinished_mechanites</unfinishedThingDef>
+		<researchPrerequisite>XIMD_R_advanced_mechanites</researchPrerequisite>
+		<skillRequirements>
+			<Crafting>10</Crafting>
+		</skillRequirements>
+
+		<!--? Work to make -->
+		<workAmount>12000</workAmount> <!-- divide by ~57 -->
+    	<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+        <workSkill>Crafting</workSkill>
+
+		<!--? Ingredients -->
+		<ingredients>
+			<li>
+				<filter><thingDefs>
+					<li>Plasteel</li>
+				</thingDefs></filter>
+				<count>12</count>
+			</li>
+            <li>
+				<filter><thingDefs>
+					<li>ComponentSpacer</li>
+				</thingDefs></filter>
+				<count>2</count>
+			</li>
+		</ingredients>
+
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Plasteel</li>
+                <li>ComponentSpacer</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+
+		<!--? Product -->
+		<products>
+			<XIMD_advanced_mechanites>8</XIMD_advanced_mechanites>
+		</products>
+	</RecipeDef>
+
+</Defs>
